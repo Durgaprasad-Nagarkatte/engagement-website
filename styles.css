@@ -1,0 +1,733 @@
+/* Engagement website – modern, responsive, traditional aesthetic */
+
+:root {
+  --cream: #f8f5f0;
+  --cream-dark: #efe9e0;
+  --gold: #b8860b;
+  --gold-light: #d4af37;
+  --gold-muted: #c9a227;
+  --ink: #2c2419;
+  --ink-muted: #5c5348;
+  --accent-pink: #d4a5a5;
+  --accent-sage: #7d8b6f;
+  --accent-rose: #c9958c;
+  --white: #fff;
+  --shadow: rgba(44, 36, 25, 0.08);
+  --shadow-strong: rgba(44, 36, 25, 0.12);
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: 0.25s ease;
+  --animate-duration: 0.6s;
+  --animate-ease: ease-out;
+}
+
+/* Simple load animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invocation,
+  .page-section,
+  .footer {
+    animation: none;
+  }
+  .ganesha-img {
+    transition: none;
+  }
+  .ganesha-emblem:hover .ganesha-img {
+    transform: none;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0;
+}
+
+.page {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(0.75rem, 3vw, 1.25rem);
+  position: relative;
+  background-image: url("assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-height: calc(100vh - 1.5rem);
+  overflow-x: visible;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(44, 36, 25, 0.15);
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 0;
+    align-items: stretch;
+  }
+  .page {
+    max-width: none;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 1rem 1.25rem 1.5rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    border-radius: 0;
+    box-shadow: none;
+    overflow-x: visible;
+  }
+  .page-section {
+    margin: 0;
+    padding: 0.75rem 0.5rem;
+  }
+  .invocation-text {
+    font-size: 0.9rem;
+  }
+  .hosts {
+    font-size: clamp(0.9rem, 2.5vw + 0.7rem, 1.05rem);
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .event-title {
+    font-size: clamp(1.85rem, 8vw, 2.5rem);
+  }
+  .ceremony-of {
+    font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+  }
+  .section-label {
+    font-size: 0.72rem;
+  }
+  .name-block .name {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+  .parentage {
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .venue-name {
+    font-size: clamp(1.05rem, 3vw, 1.25rem);
+  }
+  .venue-address {
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+  }
+  .btn-directions {
+    min-height: 44px;
+    padding: 0.65rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  .btn-save-date {
+    min-height: 44px;
+    padding: 0.65rem 1.35rem;
+    font-size: 0.9rem;
+  }
+  .date-day,
+  .date-year {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  }
+  .date-framed {
+    font-size: clamp(0.85rem, 2.2vw, 1rem);
+  }
+  .date-num {
+    font-size: clamp(2.5rem, 14vw, 3.75rem);
+  }
+  .section-datetime {
+    padding-bottom: 0.25rem;
+  }
+  .date-year {
+    margin-bottom: 0.35rem;
+  }
+  .date-divider {
+    margin-bottom: 0;
+  }
+  .section-venue {
+    padding-top: 0.15rem;
+  }
+  .section-venue .section-label {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Decorative corners – subtle overlay; background image provides main decoration */
+.corner-motif {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  opacity: 0.04;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--accent-pink) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 70% 70%,
+    var(--accent-sage) 0%,
+    transparent 45%
+  );
+  border-radius: 50%;
+}
+
+.corner-tl { top: 0; left: 0; }
+.corner-tr { top: 0; right: 0; transform: scaleX(-1); }
+.corner-bl { bottom: 0; left: 0; transform: scaleY(-1); }
+.corner-br { bottom: 0; right: 0; transform: scale(-1); }
+
+@media (min-width: 768px) {
+  .corner-motif {
+    width: 180px;
+    height: 180px;
+    opacity: 0.03;
+  }
+}
+
+/* Invocation & Ganesha */
+.invocation {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  animation: fadeInUp var(--animate-duration) var(--animate-ease) both;
+  animation-delay: 0.1s;
+}
+
+.invocation-text {
+  font-family: var(--font-serif);
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  color: var(--ink-muted);
+  letter-spacing: 0.06em;
+  margin: 0 0 0.35rem;
+  font-style: italic;
+}
+
+.ganesha-emblem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.ganesha-img {
+  width: 56px;
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.ganesha-emblem:hover .ganesha-img {
+  transform: scale(1.08);
+}
+
+/* Section nav */
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 0.6rem;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(44, 36, 25, 0.1);
+}
+
+.section-nav a {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  text-decoration: none;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  transition: color var(--transition), background var(--transition);
+}
+
+.section-nav a:hover {
+  color: var(--gold);
+  background: rgba(184, 134, 11, 0.08);
+}
+
+/* Page sections – shared (compact for one-frame layout) */
+.page-section {
+  padding: 0.5rem 0.75rem;
+  margin: 0 -0.25rem;
+  border-radius: var(--radius);
+  scroll-margin-top: 0.5rem;
+  overflow: visible;
+  animation: fadeInUp var(--animate-duration) var(--animate-ease) both;
+}
+
+.section-invitation {
+  animation-delay: 0.2s;
+  text-align: center;
+}
+
+.section-couple {
+  animation-delay: 0.35s;
+}
+
+.section-datetime {
+  animation-delay: 0.5s;
+}
+
+.section-venue {
+  animation-delay: 0.65s;
+  text-align: center;
+}
+
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-muted);
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+/* Section: Invitation */
+/* Section: The Couple */
+/* Section: Date & Time */
+
+.section-datetime .section-label {
+  margin-bottom: 0.5rem;
+}
+
+/* Section: Venue */
+.section-venue .venue-name {
+  margin-top: 0;
+}
+
+/* Invitation block (within section) */
+.section-invitation .hosts,
+.section-invitation .event-title,
+.section-invitation .ceremony-of {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hosts {
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin: 0 0 0.2rem;
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-title {
+  font-family: var(--font-script);
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+  font-weight: 400;
+  color: var(--gold);
+  margin: 0.1em 0;
+  letter-spacing: 0.02em;
+}
+
+.ceremony-of {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0.4em 0 0;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+}
+
+/* Couple section (within page-section) */
+.section-couple .couple-names {
+  margin: 0;
+}
+
+.couple-names {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.name-block {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 200px;
+  text-align: center;
+  overflow: visible;
+}
+
+.name-block .name {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 600;
+  color: var(--gold-muted);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+.parentage {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+  color: var(--ink);
+  line-height: 1.45;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.rings-divider {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-muted);
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 4vw, 1.6rem);
+  font-weight: 600;
+  opacity: 0.95;
+  line-height: 1;
+  padding: 0 0.25rem;
+}
+
+@media (max-width: 767px) {
+  .couple-names {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+  }
+  .couple-names .name-block {
+    max-width: 100%;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  .couple-names .name-block.groom {
+    order: 1;
+  }
+  .couple-names .rings-divider {
+    order: 2;
+    margin: 0.75rem 0;
+    padding: 0.25rem 0;
+  }
+  .couple-names .name-block.bride {
+    order: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .couple-names .rings-divider {
+    margin: 0.6rem 0;
+  }
+}
+
+/* Date & time – highlighted card */
+.section-datetime .date-card {
+  margin: 0 auto;
+}
+
+.date-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.75rem 1.25rem 1rem;
+  background: transparent;
+  max-width: 340px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.date-day {
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0 0 0.55rem;
+  letter-spacing: 0.02em;
+  width: 100%;
+  text-align: center;
+}
+
+.date-row {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, max-content) 1fr;
+  align-items: center;
+  gap: 0 1.25rem;
+  margin-bottom: 0.55rem;
+  min-height: 2.5rem;
+  width: 100%;
+}
+
+.date-row .date-framed:first-child {
+  justify-self: end;
+  text-align: right;
+}
+
+.date-row .date-num {
+  justify-self: center;
+  margin: 0;
+}
+
+.date-row .date-framed:last-child {
+  justify-self: start;
+  text-align: left;
+}
+
+.date-framed {
+  font-family: var(--font-serif);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 400;
+  color: var(--ink);
+  padding: 0.25rem 0.4rem;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  line-height: 1.3;
+}
+
+.date-month {
+  font-weight: 700;
+  color: var(--gold-muted);
+}
+
+.date-time {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.date-num {
+  font-family: var(--font-sans);
+  font-size: clamp(2.75rem, 12vw, 3.75rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding: 0;
+}
+
+.date-year {
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.02em;
+  width: 100%;
+  text-align: center;
+}
+
+.date-divider {
+  height: 0;
+  border-bottom: 2px dotted rgba(44, 36, 25, 0.35);
+  margin: 0 1rem;
+}
+
+.save-date-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.btn-save-date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(184, 134, 11, 0.35);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-save-date:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184, 134, 11, 0.4);
+}
+
+.btn-save-date .btn-icon {
+  font-size: 1.15em;
+}
+
+/* Venue (within section-venue) */
+.venue-name {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.15rem;
+}
+
+.venue-address {
+  font-family: var(--font-serif);
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+  color: var(--ink-muted);
+  margin: 0 0 0.6rem;
+  line-height: 1.45;
+}
+
+/* Directions CTA */
+.directions-cta {
+  margin-bottom: 0.5rem;
+}
+
+.btn-directions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(184, 134, 11, 0.35);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-directions:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184, 134, 11, 0.4);
+}
+
+.btn-directions:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 1.15em;
+}
+
+.scan-hint {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  margin: 0.25rem 0 0;
+}
+
+/* Map link (secondary) */
+.map-embed {
+  margin-top: 0.4rem;
+}
+
+.map-link {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.map-link:hover {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
+}
+
+.map-link-text::after {
+  content: " →";
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(44, 36, 25, 0.08);
+  animation: fadeIn var(--animate-duration) var(--animate-ease) both;
+  animation-delay: 0.8s;
+}
+
+.footer p {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Print */
+@media print {
+  .page {
+    padding: 1.5rem;
+  }
+  .corner-motif {
+    display: none;
+  }
+  .btn-directions {
+    background: var(--gold);
+    color: var(--white);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

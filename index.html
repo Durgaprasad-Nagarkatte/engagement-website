@@ -50,14 +50,28 @@
       <section id="couple" class="page-section section-couple">
         <div class="couple-names">
           <div class="name-block groom">
-            <span class="name">Durgaprasad</span>
+            <span class="name-row">
+              <span class="name">Durgaprasad</span>
+              <button type="button" class="profile-trigger" data-profile="groom" aria-haspopup="dialog" aria-expanded="false" aria-controls="profile-modal-groom" aria-label="About Durgaprasad">
+                <span class="profile-trigger-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                </span>
+              </button>
+            </span>
             <span class="parentage">S/o of Ekanath D Nagarkatte &amp; <br> Smt. Mangala N Shetti</span>
           </div>
           <div class="rings-divider" aria-hidden="true">
             <span class="ring-icon" aria-label="and">&#x26;</span>
           </div>
           <div class="name-block bride">
-            <span class="name">Monica</span>
+            <span class="name-row">
+              <span class="name">Monica</span>
+              <button type="button" class="profile-trigger" data-profile="bride" aria-haspopup="dialog" aria-expanded="false" aria-controls="profile-modal-bride" aria-label="About Monica">
+                <span class="profile-trigger-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                </span>
+              </button>
+            </span>
             <span class="parentage">D/o of Anand R &amp; <br> Smt. Susheela V</span>
           </div>
         </div>
@@ -77,7 +91,15 @@
           <div class="date-divider" aria-hidden="true"></div>
           <div class="save-date-cta">
             <a href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=Durgaprasad+%26+Monica+-+Engagement&amp;dates=20260313T033000Z/20260313T093000Z&amp;location=Megha+Siri+Banquets%2C+RK+Towers%2C+Basaveshwar+Nagar%2C+Bengaluru&amp;details=Engagement+ceremony+of+Durgaprasad+%26+Monica.+With+love+%26+blessings." id="google-calendar-link" class="btn-save-date" target="_blank" rel="noopener noreferrer">
-              <span class="btn-icon" aria-hidden="true">📅</span>
+              <span class="btn-icon btn-icon-calendar" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <text x="12" y="17" text-anchor="middle" font-size="6" font-weight="600" fill="currentColor" font-family="system-ui, sans-serif">13</text>
+              </svg>
+            </span>
               Save the date
             </a>
           </div>
@@ -106,6 +128,81 @@
     <span class="scroll-hint-text">Scroll for more</span>
     <span class="scroll-hint-chevron" aria-hidden="true">⌄</span>
   </div>
+
+  <!-- Profile popup (groom) -->
+  <div id="profile-modal-groom" class="profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title-groom" aria-hidden="true">
+    <div class="profile-modal-overlay" data-close-modal aria-label="Close"></div>
+    <div class="profile-modal-box">
+      <button type="button" class="profile-modal-close" data-close-modal aria-label="Close">&times;</button>
+      <h2 id="profile-modal-title-groom" class="profile-modal-title">Durgaprasad</h2>
+      <p class="profile-modal-parentage">S/o of Ekanath D Nagarkatte &amp; Smt. Mangala N Shetti</p>
+      <p class="profile-modal-line profile-modal-line--with-icon">
+        <span class="profile-modal-line-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="profile-modal-line-text"><strong>Munich, Germany</strong></span>
+      </p>
+      <p class="profile-modal-line profile-modal-line--with-icon">
+        <span class="profile-modal-line-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </span>
+        <span class="profile-modal-line-text"><strong>Flix</strong></span>
+      </p>
+      <p class="profile-modal-line profile-modal-line--with-icon">
+        <span class="profile-modal-line-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </span>
+        <span class="profile-modal-line-text"><strong>B.Tech from Shiv Nadar University</strong></span>
+      </p>
+      <!-- <p class="profile-modal-line">Working on making long distance travel affordable.</p> -->
+      <div class="profile-modal-links" role="group" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/durgaprasadnagarkatte/" target="_blank" rel="noopener noreferrer" class="profile-modal-link-icon" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/dp.nag/" target="_blank" rel="noopener noreferrer" class="profile-modal-link-icon" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile popup (bride) -->
+  <div id="profile-modal-bride" class="profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title-bride" aria-hidden="true">
+    <div class="profile-modal-overlay" data-close-modal aria-label="Close"></div>
+    <div class="profile-modal-box">
+      <button type="button" class="profile-modal-close" data-close-modal aria-label="Close">&times;</button>
+      <h2 id="profile-modal-title-bride" class="profile-modal-title">Monica</h2>
+      <p class="profile-modal-parentage">D/o of Anand R &amp; Smt. Susheela V</p>
+      <p class="profile-modal-line profile-modal-line--with-icon">
+        <span class="profile-modal-line-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="profile-modal-line-text"><strong>Bengaluru, India</strong></span>
+      </p>
+      <p class="profile-modal-line profile-modal-line--with-icon">
+        <span class="profile-modal-line-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </span>
+        <span class="profile-modal-line-text"><strong>Deloitte</strong></span>
+      </p>
+      <p class="profile-modal-line profile-modal-line--with-icon">
+        <span class="profile-modal-line-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </span>
+        <span class="profile-modal-line-text"><strong>B.Tech from VTU university</strong></span>
+      </p>
+      <!-- <p class="profile-modal-line">Working on making flight travel convenient.</p> -->
+      <div class="profile-modal-links" role="group" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/reach2monicaa/" target="_blank" rel="noopener noreferrer" class="profile-modal-link-icon" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/monica.anand0503/" target="_blank" rel="noopener noreferrer" class="profile-modal-link-icon" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

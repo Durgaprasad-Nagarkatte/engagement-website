@@ -9,21 +9,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Scroll hint: hide when user scrolls down (small screens only)
+// Scroll hint: hide when user scrolls down or reaches the bottom
 (function () {
   const hint = document.getElementById('scroll-hint');
   if (!hint) return;
   let ticking = false;
-  let lastScrollY = 0;
   const threshold = 60;
+  const bottomBuffer = 20;
 
   function updateHint() {
-    lastScrollY = window.scrollY || window.pageYOffset;
-    if (lastScrollY > threshold) {
-      hint.classList.add('scroll-hint--hidden');
-    } else {
-      hint.classList.remove('scroll-hint--hidden');
-    }
+    const scrollY = window.scrollY || window.pageYOffset;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const atTop = scrollY <= threshold;
+    const atBottom = maxScroll <= bottomBuffer || scrollY >= maxScroll - bottomBuffer;
+    const shouldHide = !atTop || atBottom;
+    hint.classList.toggle('scroll-hint--hidden', shouldHide);
     ticking = false;
   }
 
@@ -40,7 +40,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', maybeHideHint);
+  window.addEventListener('resize', function () {
+    maybeHideHint();
+    updateHint();
+  });
   maybeHideHint();
   updateHint();
 })();

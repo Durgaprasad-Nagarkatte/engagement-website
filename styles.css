@@ -677,6 +677,7 @@ body {
   font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 500;
+  line-height: 1;
   color: var(--white);
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
   border: none;
@@ -745,7 +746,18 @@ body {
 }
 
 .btn-icon {
+  display: inline-flex;
+  align-items: center;
   font-size: 1.15em;
+  line-height: 1;
+}
+
+.btn-icon svg {
+  display: block;
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .scan-hint {
